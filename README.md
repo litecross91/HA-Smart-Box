@@ -19,6 +19,8 @@ Home Assistant ESP32-S3 Smart Box Project
 ## Home Assistant
 <img width="230" height="318" alt="image" src="https://github.com/user-attachments/assets/0941120d-035a-4852-a6d4-420fa043747e" />
 <img width="245" height="356" alt="image" src="https://github.com/user-attachments/assets/0eb5fc13-57e6-48d5-9ce0-7a63f8d79572" />
+<img width="330" height="180" alt="image" src="https://github.com/user-attachments/assets/4a06f154-ce8a-4eb5-8867-de696cf36622" />
+
 
 
 ## Felépítés
