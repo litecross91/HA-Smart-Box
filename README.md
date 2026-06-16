@@ -1,7 +1,13 @@
+
 # HA-Smart-Box
 Home Assistant ESP32-S3 Smart Box Project
 
-<img width="400" height="280" alt="IMG_0562" src="https://github.com/user-attachments/assets/e2fb0770-5d45-463a-872d-58cad6982f41" />
+<img width="400" height="280" alt="IMG_0562" src="https://github.com/user-attachments/assets/e2fb0770-5d45-463a-872d-58cad6982f41" />  </br>
+<img width="200" height="140" alt="IMG_0558" src="https://github.com/user-attachments/assets/5678da20-636b-45ee-b42a-9772d9ffb282" />
+<img width="200" height="140" alt="IMG_0555" src="https://github.com/user-attachments/assets/b9324f1d-b1c2-4816-ba04-e596cb3c0fa3" />
+<img width="200" height="140" alt="IMG_0556" src="https://github.com/user-attachments/assets/7952407e-6317-4b44-b89a-fabd035f7f74" />
+
+
 
 ## Felépítés
 - Hőmérséklet/páratartalom: DHT22
