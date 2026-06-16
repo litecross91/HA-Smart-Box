@@ -1,0 +1,72 @@
+alias: Button-01 (Doors/Windows state) TTS
+description: ""
+triggers:
+  - trigger: state
+    entity_id:
+      - binary_sensor.smart_box_project_green_button
+    to:
+      - "on"
+    from:
+      - "off"
+conditions: []
+actions:
+  - variables:
+      volume_before: >-
+        {{ state_attr('media_player.smart_box_project_speaker_project_player',
+        'volume_level') }}
+  - action: media_player.volume_set
+    metadata: {}
+    target:
+      entity_id: media_player.smart_box_project_speaker_project_player
+    data:
+      volume_level: 1
+  - target:
+      entity_id: tts.google_en_com
+    data:
+      cache: true
+      media_player_entity_id: media_player.smart_box_project_speaker_project_player
+      message: >-
+        {% set maganhangzok =
+        ['a','e','i','o','u','á','é','í','ó','ö','ő','ú','ü','ű','A','E','I','O','U','Á','É','Í','Ó','Ö','Ő','Ú','Ü','Ű']
+        %} {% set ns = namespace(items=[]) %} {% if
+        is_state('binary_sensor.hallway_door_sensor_contact', 'on') %}{% set
+        ns.items = ns.items + ['Bejárati ajtó'] %}{% endif %} {% if
+        is_state('binary_sensor.living_room_door_sensor_contact', 'on') %}{% set
+        ns.items = ns.items + ['Erkély ajtó'] %}{% endif %} {% if
+        is_state('binary_sensor.bedroom_window_sensor_contact', 'on') %}{% set
+        ns.items = ns.items + ['Hálószoba ablak'] %}{% endif %} {% if
+        is_state('binary_sensor.kitchen_window_sensor_contact', 'on') %}{% set
+        ns.items = ns.items + ['Konyha ablak'] %}{% endif %} {% if ns.items |
+        length == 0 %}
+          Minden ajtó és ablak csukva van.
+        {% else %}
+          {% set ns2 = namespace(nevelos=[]) %}
+          {% for item in ns.items %}
+            {% if loop.last and not loop.first %}
+              {% set nevelo = 'és az ' if item[0] in maganhangzok else 'és a ' %}
+            {% else %}
+              {% set nevelo = 'Az ' if item[0] in maganhangzok else 'A ' %}
+            {% endif %}
+            {% set ns2.nevelos = ns2.nevelos + [nevelo + item] %}
+          {% endfor %}
+          {% if ns2.nevelos | length == 1 %}
+            {{ ns2.nevelos[0] }} nyitva van.
+          {% else %}
+            {{ ns2.nevelos | join(', ') }} is nyitva van.
+          {% endif %}
+        {% endif %}
+      language: hu
+    action: tts.speak
+  - wait_for_trigger:
+      - trigger: state
+        entity_id: media_player.smart_box_project_speaker_project_player
+        to: idle
+    timeout:
+      seconds: 30
+    continue_on_timeout: true
+  - action: media_player.volume_set
+    target:
+      entity_id: media_player.smart_box_project_speaker_project_player
+    data:
+      volume_level: "{{ volume_before }}"
+mode: single
