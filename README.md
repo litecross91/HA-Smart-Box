@@ -38,13 +38,13 @@ Home Assistant ESP32-S3 Smart Box Project
 ### 1. LED-ek
 - **Zöld**  
   *Világít:* Ha a lakásban nyitva van egy ajtó vagy ablak.  
-  *Villog:* Bejárati ajtó nyitva van.
+  *Villog:* Bejárati ajtó nyitva van.  
   *Kialszik:* Nincs nyitva se ajtó, se ablak
 - **Kék**  
-  *Világít:* Ha a lakásban világít egy lámpa.
+  *Világít:* Ha a lakásban világít egy lámpa.  
   *Kialszik:* Nem világít lámpa
 - **Fehér**  
-  *Világít:* Ha a bármilyen hang lejátszás folyamatban van.
+  *Világít:* Ha a bármilyen hang lejátszás folyamatban van.  
   *Kialszik:* Nincs lejátszás folyamatban
 - **Sárga**  
   *Világít:* Ha egy rendszer hibajelzés aktív. Ezeket én definiáltam.  
