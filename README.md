@@ -2,28 +2,37 @@
 # HA-Smart-Box
 Home Assistant ESP32-S3 Smart Box Project
 
-<img width="400" height="280" alt="image" src="https://github.com/user-attachments/assets/e1502775-6c5c-41b7-819a-0000c0a53b1c" /> </br>
-<img width="330" height="280" alt="image" src="https://github.com/user-attachments/assets/86511280-9d4d-4f5f-abb2-ae7e0704b7e7" />
-<img width="350" height="280" alt="image" src="https://github.com/user-attachments/assets/24915971-5e9f-4c95-a921-19c18bd15e09" />
+<img width="330" height="240" alt="image" src="https://github.com/user-attachments/assets/e1502775-6c5c-41b7-819a-0000c0a53b1c" />
+<img width="280" height="240" alt="image" src="https://github.com/user-attachments/assets/86511280-9d4d-4f5f-abb2-ae7e0704b7e7" />
+<img width="300" height="240" alt="image" src="https://github.com/user-attachments/assets/24915971-5e9f-4c95-a921-19c18bd15e09" /> </br>
+[Videó](https://youtu.be/4N20afO6rvo)
 
 
 ## Szerelés
 <img width="200" height="140" alt="IMG_0558" src="https://github.com/user-attachments/assets/5678da20-636b-45ee-b42a-9772d9ffb282" />
 <img width="200" height="140" alt="IMG_0555" src="https://github.com/user-attachments/assets/b9324f1d-b1c2-4816-ba04-e596cb3c0fa3" />
 <img width="200" height="140" alt="IMG_0556" src="https://github.com/user-attachments/assets/7952407e-6317-4b44-b89a-fabd035f7f74" />
-<img width="200" height="140" alt="IMG_0562" src="https://github.com/user-attachments/assets/e2fb0770-5d45-463a-872d-58cad6982f41" />
+<img width="200" height="140" alt="IMG_0562" src="https://github.com/user-attachments/assets/e2fb0770-5d45-463a-872d-58cad6982f41" /> </br>
+<img width="120" height="200" alt="image" src="https://github.com/user-attachments/assets/6e8c5773-0a98-401b-8740-5421e1b2bf2d" />
+<img width="200" height="140" alt="image" src="https://github.com/user-attachments/assets/c8a1d3e9-ca85-4145-a31b-2d3d384906c5" />
+
+## Home Assistant
+<img width="230" height="318" alt="image" src="https://github.com/user-attachments/assets/0941120d-035a-4852-a6d4-420fa043747e" />
+<img width="245" height="356" alt="image" src="https://github.com/user-attachments/assets/0eb5fc13-57e6-48d5-9ce0-7a63f8d79572" />
+
 
 ## Felépítés
 - ESP32-S3 N16R8
-- Hőmérséklet/páratartalom: DHT22
-- Hangszóró: 3W 4Ω
+- Hőmérséklet/páratartalom szenzor: DHT22
+- Hangszóró: 3W 4Ω 3525/2535
 - Amp: MAX98357A
 - Kijelző: 1,3" OLED I2C SH1106 128X64
 - Nyomógomb: 5 db
 - LED visszajelző: 5 db (3-6V) előtét ellenállással!
 - Nyomógombos rotary enkóder modul: 1 db
 - Műszerdoboz: 115x90x55 mm 
-- USB-C beépíthető anya csatlakozó
+- USB-C beépíthető anya csatlakozó --> csak USB-A/USB-C kábellel működik
+- Programozás ESPHome-on keresztül
 
 ## Funkciók
 ### 1. LED-ek
