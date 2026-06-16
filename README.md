@@ -46,6 +46,7 @@ Home Assistant ESP32-S3 Smart Box Project
   *Világít:*  Ha egy beállított személy, egy HA-ban megadott zónán belül van, ami nem az otthon.  
   *Villog:* Ha az adott személy elhagyja az ismert zónát.  
   *Kialszik:* Otthon van az adott személy
+
   
 ### 2. Gombok
 - **Zöld:** Felolvassa, hogy pontosan melyik ajtó és/vagy ablak van nyitva VAGY nincs nyitva semmi.  
@@ -54,6 +55,30 @@ Home Assistant ESP32-S3 Smart Box Project
 - **Sárga:** Felolvassa, hogy pontosan milyen aktív rendszer riasztás van VAGY nincs aktív riasztás.  
 - **Piros:** Felolvassa, hogy a beállított személy éppen melyik zónában van VAGY úton van VAGY otthon van.
 - **Rotary Enkóder:** Jobbra/balra tekerésre lépkedés a menüben vagy beállítás/érték módosítás. Nyomásra menüben mélyebbre lépés. Kijelzőnél részletezem.
+
   
 ### 3. Kijelző
 A kijelző menüjét jelenleg 5 lapra osztottam. A rotary enkóder segítségével lehet balra vagy jobbra váltani az oldalakat. 
+Jobb felül minden lapon mutatja a wifi jelet, annak erősségének megfelelő vonalakkal.  
+
+**Fő képernyő**  
+Óra és dátum kijelzés. Alul pedig a DHT szenzor hőmérséklet és páratartalom kijelzése.
+
+**Hangerő**  
+A beépített I2S media lejátszó hangerejét szabályozhatjuk. Szinkronban üzemel a HA-ban látott értékkel. Offline is működik.  
+Rotary gombnyomásra léphetünk be/ki az állítás módba, ahol grafikus csúszka is mutatja a hangerő állását.  
+
+**Rádió**  
+Rotary gombnyomásra elindítja a kijelzőn látható rádiót. Hosszú nyomásra lehet kiválasztani az állomást. Ebből a választó menüből hosszú nyomásra kilép vagy 5 másodperc tétlenség után.  
+
+**Hőmérséklet**  
+Mutatja a DHT22 szenzor értékét (beépített) és egy HA-ben lévő zigbee-s szenzor (külső) értékét.  
+
+**Rendszer**  
+- HA rendszer futási ideje  
+- Proxmox Node CPU használata  
+- Proxmox frissítések száma  
+- Futó VM-ek/LXC-k száma  
+
+
+
