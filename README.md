@@ -11,7 +11,7 @@ Home Assistant ESP32-S3 Smart Box Project
 - Nyomógomb: 5 db
 - LED visszajelző: 5 db
 - Nyomógombos rotary enkóder modul: 1 db
-- Box: 115x90x55 cm
+- Box: 115x90x55 mm
 
 ## Funkciók
 ### 1. LED-ek
