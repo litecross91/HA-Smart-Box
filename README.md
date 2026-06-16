@@ -74,27 +74,27 @@ Home Assistant ESP32-S3 Smart Box Project
 A kijelző menüjét jelenleg 5 lapra osztottam. A rotary enkóder segítségével lehet balra vagy jobbra váltani az oldalakat. 
 Jobb felül minden lapon mutatja a wifi jelet, annak erősségének megfelelő vonalakkal.  
 
-**Fő képernyő**  
+:pushpin:**Fő képernyő**  
 Óra és dátum kijelzés. Alul pedig a DHT szenzor hőmérséklet és páratartalom kijelzése.  
 <img width="200" height="100" alt="image" src="https://github.com/user-attachments/assets/a864b98b-7922-43bc-96e5-c57c9583c986" />
 
-**Hangerő**  
+:pushpin:**Hangerő**  
 A beépített I2S media lejátszó hangerejét szabályozhatjuk. Szinkronban üzemel a HA-ban látott értékkel. Offline is működik.  
 Rotary gombnyomásra léphetünk be/ki az állítás módba, ahol grafikus csúszka is mutatja a hangerő állását.  
 <img width="200" height="100" alt="image" src="https://github.com/user-attachments/assets/e9f787e0-bd04-4d34-a85b-cd14208456d2" />
 <img width="200" height="100" alt="image" src="https://github.com/user-attachments/assets/947713a8-703f-438e-a53e-5f73181046fb" />
 
-**Rádió**  
+:pushpin:**Rádió**  
 Rotary gombnyomásra elindítja a kijelzőn látható rádiót. Hosszú nyomásra lehet kiválasztani az állomást. Ebből a választó menüből hosszú nyomásra kilép vagy 5 másodperc tétlenség után.  
 <img width="200" height="100" alt="image" src="https://github.com/user-attachments/assets/79a18749-8b2b-417c-8d52-c7019b72e1de" />
 <img width="200" height="100" alt="image" src="https://github.com/user-attachments/assets/c6c8f841-61b7-4e8a-87bc-c701e692d06a" />
 <img width="200" height="100" alt="image" src="https://github.com/user-attachments/assets/38dfe362-c181-48f4-ad65-35c618cdf4db" />
 
-**Hőmérséklet**  
+:pushpin:**Hőmérséklet**  
 Mutatja a DHT22 szenzor értékét (beépített) és egy HA-ben lévő zigbee-s szenzor (külső) értékét.  
 <img width="200" height="100" alt="image" src="https://github.com/user-attachments/assets/eb98657e-2ad8-4e7c-835d-87aab74443f2" />
 
-**Rendszer**  
+:pushpin:**Rendszer**  
 - HA rendszer futási ideje  
 - Proxmox Node CPU használata  
 - Proxmox frissítések száma  
