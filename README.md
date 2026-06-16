@@ -10,14 +10,16 @@ Home Assistant ESP32-S3 Smart Box Project
 
 
 ## Felépítés
+- ESP32-S3 N16R8
 - Hőmérséklet/páratartalom: DHT22
 - Hangszóró: 3W 4Ω
 - Amp: MAX98357A
-- Kijelző: 1,3" OLED I2C
+- Kijelző: 1,3" OLED I2C SH1106 128X64
 - Nyomógomb: 5 db
-- LED visszajelző: 5 db
+- LED visszajelző: 5 db (3-6V) előtét ellenállással!
 - Nyomógombos rotary enkóder modul: 1 db
-- Box: 115x90x55 mm
+- Műszerdoboz: 115x90x55 mm 
+- USB-C beépíthető anya csatlakozó
 
 ## Funkciók
 ### 1. LED-ek
@@ -50,5 +52,8 @@ Home Assistant ESP32-S3 Smart Box Project
 - **Kék:** Felolvassa, hogy pontosan melyik helyiségben világít lámpa VAGY nem világít semmi.  
 - **Fehér:** Elindítja az előre beállított rádiót és a kijelző a Rádió lapra ugrik.  
 - **Sárga:** Felolvassa, hogy pontosan milyen aktív rendszer riasztás van VAGY nincs aktív riasztás.  
-- **Piros:** Felolvassa, hogy a beállított személy éppen melyik zónában van VAGY úton van VAGY otthon van.  
+- **Piros:** Felolvassa, hogy a beállított személy éppen melyik zónában van VAGY úton van VAGY otthon van.
+- **Rotary Enkóder:** Jobbra/balra tekerésre lépkedés a menüben vagy beállítás/érték módosítás. Nyomásra menüben mélyebbre lépés. Kijelzőnél részletezem.
   
+### 3. Kijelző
+A kijelző menüjét jelenleg 5 lapra osztottam. A rotary enkóder segítségével lehet balra vagy jobbra váltani az oldalakat. 
