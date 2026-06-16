@@ -1,0 +1,83 @@
+alias: LED-04 (System alerts)
+description: LED-04 BE ha update/CPU/VM/LXC/battery probléma, KI ha minden rendben
+triggers:
+  - entity_id:
+      - sensor.node_proxmox_total_updates
+    above: 0
+    trigger: numeric_state
+  - entity_id: sensor.node_proxmox_total_updates
+    below: 1
+    trigger: numeric_state
+  - entity_id: sensor.node_proxmox_virtual_machines_running
+    above: 2
+    trigger: numeric_state
+  - entity_id: sensor.node_proxmox_virtual_machines_running
+    below: 3
+    trigger: numeric_state
+  - entity_id: sensor.node_proxmox_containers_running
+    above: 4
+    trigger: numeric_state
+  - entity_id: sensor.node_proxmox_containers_running
+    below: 5
+    trigger: numeric_state
+  - entity_id: sensor.node_proxmox_cpu_used
+    above: 20
+    trigger: numeric_state
+  - entity_id: sensor.node_proxmox_cpu_used
+    below: 20
+    trigger: numeric_state
+  - minutes: /30
+    trigger: time_pattern
+conditions:
+  - condition: not
+    conditions:
+      - condition: state
+        entity_id: light.smart_box_project_yellow_led
+        state:
+          - unavailable
+          - unknown
+actions:
+  - variables:
+      updates: "{{ states('sensor.node_proxmox_total_updates') | int(0) }}"
+      cpu: "{{ states('sensor.node_proxmox_cpu_used') | float(0) }}"
+      vms: "{{ states('sensor.node_proxmox_virtual_machines_running') | int(0) }}"
+      lxcs: "{{ states('sensor.node_proxmox_containers_running') | int(0) }}"
+      low_battery: |
+        {{ states.sensor
+           | selectattr('attributes.device_class', 'eq', 'battery')
+           | rejectattr('entity_id', 'in', [
+               'sensor.iphone_battery_level',
+               'sensor.david_iphone_ja_battery_level',
+               'sensor.david_iphone_ja_watch_battery_level',
+               'sensor.iphone_watch_battery_level',
+               'sensor.hallway_temperature_sensor_old_battery'
+             ])
+           | rejectattr('entity_id', 'search', 'browser')
+           | selectattr('state', 'ne', 'unknown')
+           | selectattr('state', 'ne', 'unavailable')
+           | map(attribute='state')
+           | map('float', 100)
+           | select('lt', 20)
+           | list
+           | count > 0 }}
+  - choose:
+      - conditions:
+          - condition: template
+            value_template: |
+              {{ updates > 0
+                 or cpu > 20
+                 or vms < 3
+                 or lxcs < 5
+                 or low_battery }}
+        sequence:
+          - target:
+              entity_id: light.smart_box_project_yellow_led
+            action: light.turn_on
+            data:
+              brightness_pct: 40
+    default:
+      - target:
+          entity_id: light.smart_box_project_yellow_led
+        action: light.turn_off
+        data: {}
+mode: single
