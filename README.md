@@ -2,12 +2,16 @@
 # HA-Smart-Box
 Home Assistant ESP32-S3 Smart Box Project
 
-<img width="400" height="280" alt="IMG_0562" src="https://github.com/user-attachments/assets/e2fb0770-5d45-463a-872d-58cad6982f41" />  </br>
+<img width="400" height="280" alt="image" src="https://github.com/user-attachments/assets/e1502775-6c5c-41b7-819a-0000c0a53b1c" /> </br>
+<img width="330" height="280" alt="image" src="https://github.com/user-attachments/assets/86511280-9d4d-4f5f-abb2-ae7e0704b7e7" />
+<img width="350" height="280" alt="image" src="https://github.com/user-attachments/assets/24915971-5e9f-4c95-a921-19c18bd15e09" />
+
+
+## Szerelés
 <img width="200" height="140" alt="IMG_0558" src="https://github.com/user-attachments/assets/5678da20-636b-45ee-b42a-9772d9ffb282" />
 <img width="200" height="140" alt="IMG_0555" src="https://github.com/user-attachments/assets/b9324f1d-b1c2-4816-ba04-e596cb3c0fa3" />
 <img width="200" height="140" alt="IMG_0556" src="https://github.com/user-attachments/assets/7952407e-6317-4b44-b89a-fabd035f7f74" />
-
-
+<img width="200" height="140" alt="IMG_0562" src="https://github.com/user-attachments/assets/e2fb0770-5d45-463a-872d-58cad6982f41" />
 
 ## Felépítés
 - ESP32-S3 N16R8
@@ -62,23 +66,31 @@ A kijelző menüjét jelenleg 5 lapra osztottam. A rotary enkóder segítségév
 Jobb felül minden lapon mutatja a wifi jelet, annak erősségének megfelelő vonalakkal.  
 
 **Fő képernyő**  
-Óra és dátum kijelzés. Alul pedig a DHT szenzor hőmérséklet és páratartalom kijelzése.
+Óra és dátum kijelzés. Alul pedig a DHT szenzor hőmérséklet és páratartalom kijelzése.  
+<img width="200" height="100" alt="image" src="https://github.com/user-attachments/assets/a864b98b-7922-43bc-96e5-c57c9583c986" />
 
 **Hangerő**  
 A beépített I2S media lejátszó hangerejét szabályozhatjuk. Szinkronban üzemel a HA-ban látott értékkel. Offline is működik.  
 Rotary gombnyomásra léphetünk be/ki az állítás módba, ahol grafikus csúszka is mutatja a hangerő állását.  
+<img width="200" height="100" alt="image" src="https://github.com/user-attachments/assets/e9f787e0-bd04-4d34-a85b-cd14208456d2" />
+<img width="200" height="100" alt="image" src="https://github.com/user-attachments/assets/947713a8-703f-438e-a53e-5f73181046fb" />
 
 **Rádió**  
 Rotary gombnyomásra elindítja a kijelzőn látható rádiót. Hosszú nyomásra lehet kiválasztani az állomást. Ebből a választó menüből hosszú nyomásra kilép vagy 5 másodperc tétlenség után.  
+<img width="200" height="100" alt="image" src="https://github.com/user-attachments/assets/79a18749-8b2b-417c-8d52-c7019b72e1de" />
+<img width="200" height="100" alt="image" src="https://github.com/user-attachments/assets/c6c8f841-61b7-4e8a-87bc-c701e692d06a" />
+<img width="200" height="100" alt="image" src="https://github.com/user-attachments/assets/38dfe362-c181-48f4-ad65-35c618cdf4db" />
 
 **Hőmérséklet**  
 Mutatja a DHT22 szenzor értékét (beépített) és egy HA-ben lévő zigbee-s szenzor (külső) értékét.  
+<img width="200" height="100" alt="image" src="https://github.com/user-attachments/assets/eb98657e-2ad8-4e7c-835d-87aab74443f2" />
 
 **Rendszer**  
 - HA rendszer futási ideje  
 - Proxmox Node CPU használata  
 - Proxmox frissítések száma  
 - Futó VM-ek/LXC-k száma  
+<img width="200" height="100" alt="image" src="https://github.com/user-attachments/assets/1d0992dd-f408-49b8-a314-e087b6b3cf85" />
 
 
 
