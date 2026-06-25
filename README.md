@@ -1,7 +1,7 @@
 # HA-Smart-Box
 Home Assistant ESP32-S3 Smart Box Project
 
-[English version](README.md) | [Magyar verzió](README_HU.md)
+[Magyar verzió](README_HU.md)
 
 <img width="330" height="240" alt="image" src="https://github.com/user-attachments/assets/e1502775-6c5c-41b7-819a-0000c0a53b1c" />
 <img width="280" height="240" alt="image" src="https://github.com/user-attachments/assets/86511280-9d4d-4f5f-abb2-ae7e0704b7e7" />
