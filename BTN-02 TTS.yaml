@@ -1,0 +1,82 @@
+alias: Button-02 (Lights on state) TTS
+description: ""
+triggers:
+  - trigger: state
+    entity_id:
+      - binary_sensor.smart_box_project_blue_button
+    to: "on"
+    from: "off"
+conditions: []
+actions:
+  - variables:
+      volume_before: >-
+        {{ state_attr('media_player.smart_box_project_speaker_project_player',
+        'volume_level') }}
+      nappali_on: |
+        {{ states('switch.heaven') == 'on'
+           or states('light.floor_bulb') == 'on'
+           or states('light.desk_bulb') == 'on'
+           or states('switch.sonoff_100156af97_1') == 'on'
+           or states('switch.sonoff_100156af97_2') == 'on' }}
+      halo_on: |
+        {{ states('switch.sonoff_10015c2235_1') == 'on'
+           or states('switch.sonoff_10015c2235_2') == 'on'
+           or states('switch.sonoff_10015c2235_3') == 'on'
+           or states('light.bedroom_david_led') == 'on'
+           or states('light.bedroom_evi_led') == 'on'
+           or states('light.bedroom_tv_led_controller') == 'on'
+           or states('light.bedroom_wall_led') == 'on' }}
+      konyha_on: |
+        {{ states('light.kitchen_floor_led') == 'on'
+           or states('switch.sonoff_10015c13c6_1') == 'on'
+           or states('switch.sonoff_10015c13c6_2') == 'on' }}
+      eloszobа_on: |
+        {{ states('light.hallway_led_controller') == 'on'
+           or states('switch.sonoff_10015c18e5_1') == 'on' }}
+      furdо_on: "{{ states('switch.sonoff_10015c0641_1') == 'on' }}"
+      toalett_on: "{{ states('switch.sonoff_10015c0620_1') == 'on' }}"
+  - action: media_player.volume_set
+    target:
+      entity_id: media_player.smart_box_project_speaker_project_player
+    data:
+      volume_level: 1
+  - target:
+      entity_id: tts.google_en_com
+    data:
+      cache: false
+      media_player_entity_id: media_player.smart_box_project_speaker_project_player
+      message: |-
+        {% set ns = namespace(items=[]) %} {% if nappali_on %}
+          {% set ns.items = ns.items + ['a nappaliban'] %}
+        {% endif %} {% if halo_on %}
+          {% set ns.items = ns.items + ['a hálóban'] %}
+        {% endif %} {% if konyha_on %}
+          {% set ns.items = ns.items + ['a konyhában'] %}
+        {% endif %} {% if eloszobа_on %}
+          {% set ns.items = ns.items + ['az előszobában'] %}
+        {% endif %} {% if furdо_on %}
+          {% set ns.items = ns.items + ['a fürdőben'] %}
+        {% endif %} {% if toalett_on %}
+          {% set ns.items = ns.items + ['a budiban'] %}
+        {% endif %} {% if ns.items | length == 0 %}
+          Minden lámpa le van kapcsolva.
+        {% elif ns.items | length == 1 %}
+          Világít a lámpa {{ ns.items[0] }}.
+        {% else %}
+          Világít a lámpa {{ ns.items[:-1] | join(', ') }} és {{ ns.items[-1] }}.
+        {% endif %}
+      language: hu
+    action: tts.speak
+  - wait_for_trigger:
+      - trigger: state
+        entity_id: media_player.smart_box_project_speaker_project_player
+        to: idle
+    timeout:
+      seconds: 30
+    continue_on_timeout: true
+  - action: media_player.volume_set
+    target:
+      entity_id: media_player.smart_box_project_speaker_project_player
+    data:
+      volume_level: "{{ volume_before }}"
+mode: single
